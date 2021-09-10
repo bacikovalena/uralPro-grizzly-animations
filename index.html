@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <title>Grizzly | Timeline animations</title>
+</head>
+<body>
+  <section>
+    <img src="image/stars.png" id="stars">
+    <img src="image/moon.png" id="moon">
+    <img src="image/mountains_behind.png" id="mountains_behind">
+    <h2 id="text_main">Ural Pro <span>Grizzly</span></h2>
+    <a href="#" id="btn">Play</a>
+    <img src="image/shoe.png" id="shoe">
+    <img src="image/mountains_front.png" id="mountains_front">
+
+  </section>
+
+  <script src="script/anime.min.js"></script>
+  <script>
+    var animation = anime.timeline({
+      autoplay: false
+    });
+
+animation
+.add({
+  targets: '#btn',
+  top: "1500px", 
+  duration: 500,
+  easing: "easeInOutSine",
+})
+
+
+.add({
+  targets: '#stars',
+  top: "0px", 
+  duration: 1000,
+  easing: "easeInOutSine",
+})
+
+
+.add({
+  targets: '#mountains_behind',
+  bottom: "0px", 
+  duration: 1000,
+  easing: "easeInOutSine",
+})
+
+
+.add({
+  targets: '#moon',
+  top: "0px", 
+  duration: 1000,
+  easing: "easeInOutSine",
+})
+
+.add({
+  targets: '#mountains_front',
+  bottom: "0px", 
+  duration: 1000,
+  easing: "easeInOutSine",
+})
+
+
+
+.add({
+  targets: '#shoe',
+  bottom: "100px", 
+  duration: 1000,
+  easing: "easeInOutSine",
+})
+
+.add({
+  targets: '#text_main',
+  duration: 1000,
+  marginRight: 0, 
+  easing: "easeInOutSine",
+})
+
+.add({
+  targets: '#btn',
+  duration: 1000,
+  top: "50%", 
+  easing: "easeInOutSine",
+})
+
+
+
+ document.querySelector("#btn").onclick = animation.play;
+  </script>
+</body>
+</html>
